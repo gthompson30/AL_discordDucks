@@ -14,6 +14,7 @@ public class ALTester {
 
 		// should be true
 		System.out.println(isSorted(_data));
+		_data.add(50);
 	}
 
 	public static boolean isSorted(ArrayList<Integer> a) {

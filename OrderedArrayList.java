@@ -31,6 +31,31 @@ public class OrderedArrayList {
 		return false;
 	}
 
+	public static boolean set(ArrayList<Integer> a, int index, int val) {
+		if (index == 0) {
+			if (a.size() > 1) {
+				if (a.get(1) >= val) {
+					a.set(0, val);
+					return true;
+				} else { return false; }
+			} else {
+				a.set(1, val);
+				return true;
+			}
+		}
+		if (index == a.size() - 1) {
+			if (val >= a.get(index - 1)) {
+				a.set(index, val);
+				return true;
+			} else { return false; }
+		}
+		if (a.get(index - 1) <= val && val <= a.get(index + 1)) {
+			a.set(index, val);
+			return true;
+		}
+		return false;
+	}
+
 	public static int size(ArrayList<Integer> a) {
 		return a.size();
 	}
