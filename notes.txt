@@ -1,1 +1,20 @@
-Nothing is here yet
+// discordDucks (Marcus Wu + Nat, Gabriel Thompson + Iggy, Kartik Vanjani + Krrish)
+// APCS1 pd8
+// L02 -- Well Al B. Sorted
+// 2021-12-13m
+// time spent: 1.6hrs (roughly)
+
+QCC:
+ - Is there a built-in Java class that functions the same as OrderedSuperArray?
+ - How efficient are SuperArray's in comparison to regular arrays? How does the memory
+   allocation work on the low level, with deleting and adding elements? 
+ - In what contexts would you need an OrderedSuperArray?
+ - We're still sort of confused -- how exactly is OrderedSuperArray a wrapper class,
+   in the same way that Integer is? It seems like something that you instantiate,
+   rather than call functions from, alone
+
+DISCO:
+ - Binary search is tedious to implement because of off-by-one errors
+ - OrderedArrayList is meant to be something that you *instantiate*, rather than refer to.
+ - Binary search can be implemented by shifting an upper and lower bounds, rather than
+   by literally splitting the array into two.
