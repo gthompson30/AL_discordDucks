@@ -22,9 +22,9 @@ public class OrderedArrayList
 
   // default constructor
   // initializes instance variables
-  public OrderedArrayList()
+  public OrderedArrayList(ArrayList<Integer> a)
   {
-     _data = new ArrayList();
+     _data = a;
   }
 
   public String toString()
@@ -67,6 +67,7 @@ public class OrderedArrayList
 		while (index < _data.size()) {
 			if (_data.get(index) > newVal) {
 				_data.add(index, newVal);
+				return;
 			}
 			index++;
 			System.out.println(index);
