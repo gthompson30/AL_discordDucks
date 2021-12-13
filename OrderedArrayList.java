@@ -22,9 +22,9 @@ public class OrderedArrayList
 
   // default constructor
   // initializes instance variables
-  public OrderedArrayList(ArrayList<Integer> a)
+  public OrderedArrayList()
   {
-     _data = a;
+	_data = new ArrayList();
   }
 
   public String toString()
@@ -70,7 +70,7 @@ public class OrderedArrayList
 				return;
 			}
 			index++;
-			System.out.println(index);
+			//System.out.println(index);
 		}
 
 		_data.add(newVal);
@@ -83,22 +83,28 @@ public class OrderedArrayList
   {
 	int lower = 0;
 	int upper = size() - 1;
-	int mid;
+	int mid, diff;
 
-	int index = -1;
-
-	while (upper - lower > 0) {
-		mid = (upper + lower) / 2;
-		if (_data.get(mid) > newVal) {
-			upper = mid;
-		} else if (_data.get(mid) < newVal) {
-			lower = mid;
-		} else {
-			index = upper;
-		}
+	if (size() == 0) {
+		_data.add(newVal);
+		return;
 	}
 
-	_data.add(index, newVal);
+	while (upper >= lower) {
+		mid = (upper + lower) / 2;
+		diff = newVal - _data.get(mid);
+		
+		if (diff < 0) {
+			upper = mid - 1;
+		} else if (diff > 0) {
+			lower = mid + 1;
+		} else {
+			_data.add(mid, newVal);
+			return;
+		}
+	}
+	_data.add(lower, newVal);
+	return;
   }
 
   // main method solely for testing purposes
@@ -123,3 +129,4 @@ public class OrderedArrayList
   }//end main()
 
 }//end class OrderedArrayList
+
